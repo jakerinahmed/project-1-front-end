@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watchAll",
     "dev": "python -m http.server"
   },
   "repository": {
@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/jakerinahmed/project-1-front-end/issues"
   },
-  "homepage": "https://github.com/jakerinahmed/project-1-front-end#readme"
+  "homepage": "https://github.com/jakerinahmed/project-1-front-end#readme",
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
+  }
 }
