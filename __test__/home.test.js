@@ -3,10 +3,7 @@
  */
 
 const fs = require("fs")
-const { TestEnvironment } = require("jest-environment-jsdom")
 const path = require("path")
-const { hasUncaughtExceptionCaptureCallback } = require("process")
-
 const html = fs.readFileSync(path.resolve(__dirname, "../home.html"), "utf8")
 
 describe("home.html", () => {
@@ -16,9 +13,40 @@ describe("home.html", () => {
     })
 
     describe("head", () => {
+
         test("it has a title", () => {
             const title = document.querySelector("title")
-            expect(title.textContent).toContain("wroteIt") 
+            expect(title).toBeTruthy
+            expect(title.textContent).toBe("wroteIt") 
+        })
+    })
+
+    describe("body", () => {
+
+        test("it has a navbar", () => {
+            const navbar = document.querySelector("nav")
+            expect(navbar).toBeTruthy();
+        })
+
+        test("it has a searchbar", () => {
+            const form = document.querySelector("form")
+            const button = document.querySelector("button")
+            expect(form).toBeTruthy()
+            expect(button.textContent).toBe("Search")
+        })
+    })
+
+    describe("recent entries", () => {
+
+        test("There are cards present on page", () => {
+            const card = document.getElementsByClassName("card")
+            expect(card).toBeTruthy()
+        })
+
+        test("Comment button present", () => {
+            const commentButton = document.getElementsByClassName("comment-button")
+            expect(commentButton).toBeTruthy()
+            // expect(commentButton.textContent).toBe("Comment")
         })
     })
 })
