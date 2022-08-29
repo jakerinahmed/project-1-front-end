@@ -59,4 +59,9 @@
     margin-top: 20px;
 }
 
+.submitNewEntry {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
 
