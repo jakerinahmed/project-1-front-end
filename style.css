@@ -45,11 +45,29 @@
     padding: 8px;
 }
 
+.comment-button:hover {
+    border: solid orangered;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    color:orangered;
+    padding: 8px;
+}
+
 .new-post-button{
     text-decoration: none;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
     color:white;
+    padding: 8px;
+}
+
+.new-post-button:hover {
+    border: solid orangered;
+    text-decoration: none;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    color:orangered;
     padding: 8px;
 }
 
