@@ -66,7 +66,7 @@
     margin: -10px 40px 0 0 ;
 }
 
-#emoji, button {
+.emojiBtn > button {
     border-radius: 40px;
     border: none;
     font-size: x-large;
