@@ -86,3 +86,17 @@
     margin-top: 20px;
 }
 
+#emoji{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 2;
+    margin: 65px 40px 0 0;
+}
+
+.emojiBtn > button {
+    border-radius: 50px;
+    border: none;
+    font-size: x-large;
+}
