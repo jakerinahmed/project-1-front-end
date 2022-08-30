@@ -20,8 +20,11 @@
 
 .logo {
     color: white;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
+    font-family: 'Lora', serif;
+    display: flex;
+    align-items: center;
 }
 
 .searchButton {
@@ -35,4 +38,36 @@
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
     color: white;
+}
+
+.comment {
+    text-decoration: none;
+    background-color: orangered;
+    border-radius: 10px 10px 10px 10px;
+    color:white;
+    padding: 8px;
+    /* display: flex;   */
+    /* justify-content: start; */
+}
+
+.addcomment-btn {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    display: flex;
+}
+
+#emoji{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 2;
+    margin: -10px 40px 0 0 ;
+}
+
+.emojiBtn > button {
+    border-radius: 40px;
+    border: none;
+    font-size: x-large;
 }
