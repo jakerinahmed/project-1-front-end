@@ -1,4 +1,3 @@
-
 function getAllEntries(){
     fetch('https://wrote-it-babole.herokuapp.com/journal-entries')
         .then(r => r.json())
@@ -34,12 +33,18 @@ function submitEntry(e){
 
 function appendEntries(entries){
     entries.forEach(appendEntry);
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((e) => {
+        e.addEventListener('click', (e) => {
+            location.href = "http://localhost:8000/view.html?="+e.currentTarget.id
+        })
+    })
 };
 
 function appendEntry(entryData){
     const newDiv = document.createElement('div');
     newDiv.className = 'card w-100 my-3';    
-    newDiv.id = `Entry-${entryData.id}`  
+    newDiv.id = entryData.id  
 
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body'
@@ -66,4 +71,3 @@ function appendEntry(entryData){
     const recentEntries = document.querySelector('#recent-entries');
     recentEntries.append(newDiv);
 };
-
