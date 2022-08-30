@@ -53,3 +53,12 @@
     margin-bottom: 0px;
     display: flex;
 }
+
+#emoji{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 2;
+    margin: -10px 40px 0 0 ;
+}
