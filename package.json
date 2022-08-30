@@ -1,7 +1,7 @@
 {
   "name": "project-1-journal-entry",
   "version": "1.0.0",
-  "description": "",
+  "description": "### Installations",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
@@ -22,5 +22,8 @@
   "devDependencies": {
     "jest": "^29.0.1",
     "jest-environment-jsdom": "^29.0.0"
+  },
+  "dependencies": {
+    "python": "^0.0.4"
   }
 }
