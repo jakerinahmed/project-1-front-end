@@ -36,3 +36,20 @@
     border-radius: 10px 10px 10px 10px;
     color: white;
 }
+
+.comment {
+    text-decoration: none;
+    background-color: orangered;
+    border-radius: 10px 10px 10px 10px;
+    color:white;
+    padding: 8px;
+    /* display: flex;   */
+    /* justify-content: start; */
+}
+
+.addcomment-btn {
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: 0px;
+    display: flex;
+}
