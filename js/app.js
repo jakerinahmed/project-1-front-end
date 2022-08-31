@@ -145,6 +145,20 @@ function updateEmojiCount(e){
 }
 
 
+    // const commentBtn = document.createElement('a');
+    // commentBtn.className = 'comment-button'
+    // commentBtn.textContent = 'Comment'
+
+    newDiv.appendChild(cardBody);
+    cardBody.appendChild(title);
+    cardBody.appendChild(text);
+    // cardBody.appendChild(commentBtn);
+
+    const recentEntries = document.querySelector('#recent-entries');
+    recentEntries.append(newDiv);
+
+// module.exports = {getAllEntries}
+
 function appendEmojiCount(entryData){
     document.querySelector("#e1\\:"+entryData.id).textContent = entryData.emoji1
     document.querySelector("#e2\\:"+entryData.id).textContent = entryData.emoji2
