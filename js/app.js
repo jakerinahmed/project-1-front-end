@@ -144,6 +144,7 @@ function updateEmojiCount(e){
         .catch(console.warn)
 }
 
+
 function appendEmojiCount(entryData){
     document.querySelector("#e1\\:"+entryData.id).textContent = entryData.emoji1
     document.querySelector("#e2\\:"+entryData.id).textContent = entryData.emoji2
