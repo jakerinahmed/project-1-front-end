@@ -37,21 +37,24 @@
             <div class="mb-3">
                 <input type="text" class="form-control" id="titleOfPost" placeholder="Enter your blog title" />
             </div>
-            <div class="mb-3">
-                <textarea class="form-control" id="contentOfPost" rows="7" placeholder="start typing..."></textarea>
-               
-                <div contentEditable="true" class="placeGif"></div>
+            <div class="mb-3" >
+                <div class="blogEntry">
+                    <textarea class="form-control" id="contentOfPost" rows="7" placeholder="start typing..."></textarea>
+                    <div contentEditable="true" class="inputGif"></div>
+                    
+                </div>  
+                    <label for="search"> Add Gif: </label>
+                    <input type="text" id="searchGif" placeholder="search...">
+                    <button class="addBtn">add</button>
+                    <button class="resetBtn" type="reset" >remove</button> 
+                </div>
+
+                
             </div>
-            <div>
-                <label for="search" id ="searchLabel"> add a gif: </label>
-                <input type="text" id="searchGif" placeholder="search...">
-                <button class="addBtn">add</button>
-                <button class="resetBtn" type="reset" >clear</button>
+            <div id="create-new-post" class="submitNewEntry">
+                <input type="submit" value="submit wroteIt!"> 
             </div>
 
-            <div id="create-new-post" class="submitNewEntry">
-                <input type="submit" value="Create new wroteIt">
-            </div>
         </form>
 
     </div>
