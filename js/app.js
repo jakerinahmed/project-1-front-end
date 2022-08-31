@@ -13,7 +13,7 @@ function appendEntries(entries){
     const cards = document.querySelectorAll(".card-body");
     cards.forEach((e) => {
         e.addEventListener('click', (e) => {
-            location.href = "http://localhost:8000/view.html?="+e.currentTarget.id
+            location.href = "view.html?="+e.currentTarget.id
         })
     })
 
