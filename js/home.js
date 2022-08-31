@@ -2,7 +2,6 @@ const newWroteItBtn = document.getElementsByClassName('new-post-button')
 
 getAllEntries()
 
-
 let input = document.querySelector('#searchBar')
 
 function search(e) {
@@ -29,3 +28,4 @@ input.addEventListener('keypress', (e) => {
     if (e.isComposing || e.keyCode === 13){
     e.preventDefault()}
 })
+

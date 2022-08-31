@@ -13,7 +13,7 @@ function appendEntries(entries){
     const cards = document.querySelectorAll(".card-body");
     cards.forEach((e) => {
         e.addEventListener('click', (e) => {
-            location.href = "http://localhost:8000/view.html?="+e.currentTarget.id
+            location.href = "view.html?="+e.currentTarget.id
         })
     })
 
@@ -144,6 +144,20 @@ function updateEmojiCount(e){
         .catch(console.warn)
 }
 
+
+    // const commentBtn = document.createElement('a');
+    // commentBtn.className = 'comment-button'
+    // commentBtn.textContent = 'Comment'
+
+    newDiv.appendChild(cardBody);
+    cardBody.appendChild(title);
+    cardBody.appendChild(text);
+    // cardBody.appendChild(commentBtn);
+
+    const recentEntries = document.querySelector('#recent-entries');
+    recentEntries.append(newDiv);
+
+// module.exports = {getAllEntries}
 
 function appendEmojiCount(entryData){
     document.querySelector("#e1\\:"+entryData.id).textContent = entryData.emoji1
