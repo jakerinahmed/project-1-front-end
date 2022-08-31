@@ -90,9 +90,10 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    align-items: flex-start;
+    /* position: absolute; */
     z-index: 2;
-    margin: 65px 40px 0 0;
+    /* margin: 65px 40px 0 0; */
 }
 
 .emojiBtn > button {
@@ -100,3 +101,8 @@
     border: none;
     font-size: x-large;
 }
+
+#eBtn:hover{
+    position: relative;
+    top: -4px;
+  }

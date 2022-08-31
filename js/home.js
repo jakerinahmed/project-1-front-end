@@ -23,8 +23,6 @@ function search(e) {
      
 }
 
-
-
 input.addEventListener('keyup', search)
 
 input.addEventListener('keypress', (e) => {
