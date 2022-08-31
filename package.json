@@ -21,7 +21,8 @@
   "homepage": "https://github.com/jakerinahmed/project-1-front-end#readme",
   "devDependencies": {
     "jest": "^29.0.1",
-    "jest-environment-jsdom": "^29.0.0"
+    "jest-environment-jsdom": "^29.0.0",
+    "jest-fetch-mock": "^3.0.3"
   },
   "dependencies": {
     "python": "^0.0.4"
