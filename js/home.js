@@ -1,3 +1,4 @@
+
 const newWroteItBtn = document.getElementsByClassName('new-post-button')
 
 getAllEntries()
@@ -21,3 +22,4 @@ function search() {
 
 
 searchBtn.addEventListener('click', search)
+
