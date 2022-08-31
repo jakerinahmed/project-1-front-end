@@ -1,6 +1,5 @@
 const submitBtn = document.querySelector('#new-post-form')
-
-submitBtn.addEventListener('submit', submitEntry)
+const searchBtn = document.querySelector('.searchButton')
 
 // gif functions
 const addBtn = document.querySelector('.addBtn')
@@ -33,4 +32,11 @@ function getNewGif () {
             })
     }
 }
+
+submitBtn.addEventListener('submit', submitEntry)
+
+function redirect() {
+    window.location.replace('home.html')
+}
+searchBtn.addEventListener('click', redirect)
 

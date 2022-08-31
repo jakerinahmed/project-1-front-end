@@ -27,13 +27,13 @@
     align-items: center;
 }
 
-.searchButton {
+.viewSearchButton {
     border: solid white;
     border-radius: 10px 10px 10px 10px;
     color: orangered;
 }
 
-.searchButton:hover {
+.viewSearchButton:hover {
     border: solid;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;

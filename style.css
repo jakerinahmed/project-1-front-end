@@ -27,7 +27,7 @@
     align-items: center;
 }
 
-.searchButton {
+.searchButton, .viewSearchButton{
     border: solid white;
     border-radius: 10px 10px 10px 10px;
     color: orangered;
@@ -90,9 +90,10 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    align-items: flex-start;
+    /* position: absolute; */
     z-index: 2;
-    margin: 65px 40px 0 0;
+    /* margin: 65px 40px 0 0; */
 }
 
 .emojiBtn > button {
@@ -133,4 +134,9 @@
     color: green;
     
 }
+
+#eBtn:hover{
+    position: relative;
+    top: -4px;
+  }
 
