@@ -67,7 +67,6 @@ function appendEntry(entryData){
     recentEntries.append(newDiv);
 };
 
-module.exports = {getAllEntries}
 
 module.exports = {
     getAllEntries,
