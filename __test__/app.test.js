@@ -46,6 +46,13 @@ describe('App', () => {
 
     describe('helpers', () => {
 
+        describe("redirect", () => {
+            xtest("redirect to homepage", () => {
+                app.redirect()
+                expect(window.location.pathname).toContain("home.html")
+            })
+        })
+
         describe('appendEntry', () => {
             test('it adds a new entry to the page with journal entries', () => {
                 const entryCount = document.querySelectorAll('.card-body').length;
@@ -101,14 +108,22 @@ describe('App', () => {
         // })
 
 
-        describe("updateEmojiCount", () => {
-            test("it upadates emoji count when clicked", () => {
+        // describe("updateEmojiCount", () => {
+        //     test("it upadates emoji count when clicked", () => {
 
-                const fakeSubmitEvent = {title : "Emoji Test", content : "This is an emoji test"}
-                app.appendEntries(fakeSubmitEvent)
+        //         const fakeSubmitEvent = {title : "Emoji Test", content : "This is an emoji test"}
+        //         app.appendEntries(fakeSubmitEvent)
 
+        //     })
+        // })
+
+        describe("getOneEntry", () => {
+            test("get one entry from API when clicked on from homepage", () => {
+                app.getOneEntry()
+                expect(fetch.mock.calls[0][0]).toMatch(/journal-entries/)
             })
         })
+
     })
 
 })
