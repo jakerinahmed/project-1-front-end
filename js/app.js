@@ -198,6 +198,7 @@ function viewEntry(entryData){
     })
 }
 
+let clickNo = 0
 function addComment(){
     const addComentBtn = document.querySelector('.addcomment-btn');
 
@@ -270,6 +271,8 @@ function addComment(){
     }
 }
 
+let searchTerm = window.location.search
+const entryID = searchTerm.slice(searchTerm.search('=')+1)
 function submitComment(e){
     e.preventDefault();
     // console.log(e.target.contentOfComment.value)
@@ -372,5 +375,12 @@ module.exports = {
     updateEmojiCount,
     appendEntry,
     redirect,
-    appendEntries
+    appendEntries,
+    getOneEntry,
+    viewEntry,
+    addComment,
+    submitComment,
+    getEntryComments,
+    appendComment,
+    appendComments
 }
