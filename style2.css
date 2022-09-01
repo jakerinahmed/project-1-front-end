@@ -7,7 +7,7 @@
     
 } 
 
-#blog-entries, #comment-section {
+#blog-entries, #comment-section, .addcomment-btn {
     padding: 40px 30px 0px 30px;
     display: flex;
     flex-direction: column;
@@ -52,12 +52,12 @@
     /* justify-content: start; */
 }
 
-.addcomment-btn {
+/* .addcomment-btn {
     margin-top: 20px;
     margin-left: 30px;
     margin-bottom: 0px;
     display: flex;
-}
+} */
 
 #emoji{
     width: 100%;
@@ -72,4 +72,16 @@
     border-radius: 40px;
     border: none;
     font-size: x-large;
+}
+
+#submitBtn{
+    display:flex;
+    justify-content: flex-end;
+} 
+
+#submitBtn > input {
+    background-color: white;
+    color: orangered;
+    border: 2px solid orangered;
+    border-radius: 10px;
 }
