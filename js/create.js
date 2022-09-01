@@ -8,7 +8,8 @@ const resetBtn = document.querySelector('.resetBtn')
 addBtn.addEventListener("click", getNewGif)
 
 let clickCount = 0
-function getNewGif () {
+function getNewGif (e) {
+    e.preventDefault()
     let searchTerm = document.querySelector("#searchGif").value;
     if (!searchTerm ) {
         document.querySelector('#searchGif').placeholder = "please try again"
@@ -34,6 +35,7 @@ function getNewGif () {
 }
 
 submitBtn.addEventListener('submit', submitEntry)
+
 
 function redirect() {
     window.location.replace('home.html')
