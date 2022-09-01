@@ -27,17 +27,19 @@
     align-items: center;
 }
 
-.viewSearchButton {
+.viewSearchButton:hover {
     border: solid white;
     border-radius: 10px 10px 10px 10px;
+    background-color: white;
     color: orangered;
 }
 
-.viewSearchButton:hover {
+.viewSearchButton {
     border: solid;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
     color: white;
+    margin: 20px
 }
 
 .comment {

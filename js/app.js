@@ -1,6 +1,6 @@
 //Home page
 
-function getAllEntries(){
+function getAllEntries() {
     fetch('https://wrote-it-babole.herokuapp.com/journal-entries')
         .then(r => r.json())
         .then(appendEntries)
@@ -8,12 +8,12 @@ function getAllEntries(){
 };
 
 
-function appendEntries(entries){
+function appendEntries(entries) {
     entries.forEach(appendEntry);
     const cards = document.querySelectorAll(".card-body");
     cards.forEach((e) => {
         e.addEventListener('click', (e) => {
-            location.href = "view.html?="+e.currentTarget.id
+            location.href = "view.html?=" + e.currentTarget.id
         })
     })
 
@@ -26,18 +26,18 @@ function appendEntries(entries){
 };
 
 
-function appendEntry(entryData){
+function appendEntry(entryData) {
     const newDiv = document.createElement('div');
-    newDiv.className = 'card w-100 my-4';     
-    
+    newDiv.className = 'card w-100 my-4';
+
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body'
-    cardBody.id = entryData.id 
-    
+    cardBody.id = entryData.id
+
     const title = document.createElement('h5');
     title.className = 'card-title'
     title.textContent = entryData.title
-    
+
     const text = document.createElement('p');
     text.className = 'card-text'
     text.textContent = entryData.content
@@ -51,7 +51,7 @@ function appendEntry(entryData){
 
     const emojiBtn1 = document.createElement('button')
     emojiBtn1.id = "eBtn"
-    emojiBtn1.textContent = String.fromCodePoint( 128512 );
+    emojiBtn1.textContent = String.fromCodePoint(128512);
     const emoji1Count = document.createElement('span')
     emoji1Count.id = "e1:" + entryData.id
     emoji1Count.textContent = entryData.emoji1
@@ -59,7 +59,7 @@ function appendEntry(entryData){
 
     const emojiBtn2 = document.createElement('button')
     emojiBtn2.id = "eBtn"
-    emojiBtn2.textContent = String.fromCodePoint( 128558 );
+    emojiBtn2.textContent = String.fromCodePoint(128558);
     const emoji2Count = document.createElement('span')
     emoji2Count.id = "e2:" + entryData.id
     emoji2Count.textContent = entryData.emoji2
@@ -67,13 +67,13 @@ function appendEntry(entryData){
 
     const emojiBtn3 = document.createElement('button')
     emojiBtn3.id = "eBtn"
-    emojiBtn3.textContent = String.fromCodePoint( 128169 );
+    emojiBtn3.textContent = String.fromCodePoint(128169);
     const emoji3Count = document.createElement('span')
     emoji3Count.id = "e3:" + entryData.id
     emoji3Count.textContent = entryData.emoji3
     emojiBtn3.appendChild(emoji3Count)
 
-    
+
     newDiv.appendChild(cardBody);
     cardBody.appendChild(title);
     cardBody.appendChild(text);
@@ -83,7 +83,7 @@ function appendEntry(entryData){
     emojiSpan.appendChild(emojiBtn1)
     emojiSpan.appendChild(emojiBtn2)
     emojiSpan.appendChild(emojiBtn3)
-    
+
     const recentEntries = document.querySelector('#recent-entries');
     recentEntries.append(newDiv);
 };
@@ -91,27 +91,33 @@ function appendEntry(entryData){
 
 //Create page
 
-function submitEntry(e){
+function submitEntry(e) {
     e.preventDefault();
+    if (!e.target.contentOfPost.value) {
+        document.querySelector('#contentOfPost').placeholder = "write something before submitting!"
+    }
+    else {
+        const entryData = {
+            title: e.target.titleOfPost.value,
+            content: e.target.contentOfPost.value
+        };
 
-    const entryData = {
-        title: e.target.titleOfPost.value,
-        content: e.target.contentOfPost.value
-    };
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(entryData),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        };
 
-    const options = { 
-        method: 'POST',
-        body: JSON.stringify(entryData),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    };
+        fetch('https://wrote-it-babole.herokuapp.com/journal-entries', options)
+            .then(r => r.json())
+            .then(redirect)
+            .catch(console.warn)
+    }
 
-    fetch('https://wrote-it-babole.herokuapp.com/journal-entries', options)
-        .then(r => r.json())
-        .then(location.href = '#') // << make function to check if fields are truthy for redirect
-        .catch(console.warn)
 };
+
 
 //View page
 
@@ -319,9 +325,13 @@ function appendComment(commentData){
     commentSection.append(newDiv);
 }
 
+function redirect() {
+    window.location.replace('home.html')
+}
+
 //Common
 
-function updateEmojiCount(e){
+function updateEmojiCount(e) {
     const countId = e.children[0].id
     const entryId = countId[countId.search(":") + 1]
     const emojiNo = parseInt(countId[countId.search(":") - 1])
@@ -336,7 +346,7 @@ function updateEmojiCount(e){
         changes = { emoji3: count + 1 }
     }
 
-    const options = { 
+    const options = {
         method: 'PATCH',
         body: JSON.stringify(changes),
         headers: {
@@ -344,21 +354,23 @@ function updateEmojiCount(e){
         }
     };
 
-    fetch('https://wrote-it-babole.herokuapp.com/journal-entries/'+entryId, options)
+    fetch('https://wrote-it-babole.herokuapp.com/journal-entries/' + entryId, options)
         .then(r => r.json())
         .then(appendEmojiCount)
         .catch(console.warn)
 }
 
-function appendEmojiCount(entryData){
-    document.querySelector("#e1\\:"+entryData.id).textContent = entryData.emoji1
-    document.querySelector("#e2\\:"+entryData.id).textContent = entryData.emoji2
-    document.querySelector("#e3\\:"+entryData.id).textContent = entryData.emoji3
+function appendEmojiCount(entryData) {
+    document.querySelector("#e1\\:" + entryData.id).textContent = entryData.emoji1
+    document.querySelector("#e2\\:" + entryData.id).textContent = entryData.emoji2
+    document.querySelector("#e3\\:" + entryData.id).textContent = entryData.emoji3
 }
 
 module.exports = {
     getAllEntries,
     submitEntry,
     updateEmojiCount,
-    appendEntry
+    appendEntry,
+    redirect,
+    appendEntries
 }
