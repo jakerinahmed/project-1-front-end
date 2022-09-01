@@ -36,9 +36,5 @@ function getNewGif (e) {
 
 submitBtn.addEventListener('submit', submitEntry)
 
-
-function redirect() {
-    window.location.replace('home.html')
-}
 searchBtn.addEventListener('click', redirect)
 
