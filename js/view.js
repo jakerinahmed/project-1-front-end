@@ -6,8 +6,14 @@ function redirect() {
 
 viewSearchBtn.addEventListener('click', redirect)
 
+
+
 let searchTerm = window.location.search
-var newWord = searchTerm.slice(searchTerm.search('=')+1)
+const entryID = searchTerm.slice(searchTerm.search('=')+1)
 
-console.log(newWord)
+getOneEntry(entryID)
 
+let clickNo = 0
+addComment()
+
+getEntryComments(entryID)
