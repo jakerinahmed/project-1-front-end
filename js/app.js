@@ -111,6 +111,7 @@ function submitEntry(e){
         .then(r => r.json())
         .then(location.href = '#') // << make function to check if fields are truthy for redirect
         .catch(console.warn)
+
 };
 
 //Common
