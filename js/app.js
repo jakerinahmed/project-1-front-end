@@ -164,5 +164,6 @@ module.exports = {
     submitEntry,
     updateEmojiCount,
     appendEntry,
-    redirect
+    redirect,
+    appendEntries
 }

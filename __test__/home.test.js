@@ -32,7 +32,7 @@ describe("home.html", () => {
             const form = document.querySelector("form")
             const button = document.querySelector("button")
             expect(form).toBeTruthy()
-            expect(button.textContent).toBe("Search")
+ 
         })
     })
 
