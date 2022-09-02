@@ -47,12 +47,12 @@ describe('App', () => {
 
     describe('helpers', () => {
 
-        describe("redirect", () => {
-            xtest("redirect to homepage", () => {
-                app.redirect()
-                expect(window.location.pathname).toContain("home.html")
-            })
-        })
+        // describe("redirect", () => {
+        //     xtest("redirect to homepage", () => {
+        //         app.redirect()
+        //         expect(window.location.pathname).toContain("home.html")
+        //     })
+        // })
 
         describe('appendEntry', () => {
             test('it adds a new entry to the page with journal entries', () => {
