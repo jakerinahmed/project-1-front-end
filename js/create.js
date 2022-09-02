@@ -18,13 +18,18 @@ function getNewGif (e) {
         if (clickCount === 0) {
             let img = document.createElement("img")
             img.id= "gif"
+            img.style.maxHeight = "200px"
+            img.style.maxWidth = "25vw"
             document.querySelector(".inputGif").appendChild(img)
         }
         clickCount = 1
         const gifImage = document.querySelector("#gif")
         fetch("https://api.giphy.com/v1/gifs/translate?api_key=JI2XhxjA0Akc6HIu9zDCcuYV02YOBnLD&s=" + searchTerm)
             .then (resp => resp.json())       
-            .then (resp =>  gifImage.src = resp.data.images.original.url)
+            .then (resp =>  {
+                gifImage.src = resp.data.images.original.url;
+                document.querySelector("#gifUrl").value = resp.data.images.original.url;
+            })
 
         if (resetBtn)
             resetBtn.addEventListener("click", function () {
