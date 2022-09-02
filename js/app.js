@@ -93,13 +93,15 @@ function appendEntry(entryData) {
 
 function submitEntry(e) {
     e.preventDefault();
-    if (!e.target.contentOfPost.value) {
+    if (!e.target.contentOfPost.value && !e.target.titleOfPost.value) {
         document.querySelector('#contentOfPost').placeholder = "write something before submitting!"
+        document.querySelector('#titleOfPost').placeholder = "No blog title??"
     }
     else {
         const entryData = {
             title: e.target.titleOfPost.value,
-            content: e.target.contentOfPost.value
+            content: e.target.contentOfPost.value,
+            gif: e.target.gifUrl.value
         };
 
         const options = {
@@ -134,6 +136,9 @@ function viewEntry(entryData){
     
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body'
+    cardBody.id = "entry-card"
+
+    const textDiv = document.createElement('div');
     
     const title = document.createElement('h5');
     title.className = 'card-title'
@@ -176,14 +181,21 @@ function viewEntry(entryData){
 
     
     newDiv.appendChild(cardBody);
-    cardBody.appendChild(title);
-    cardBody.appendChild(text);
+    cardBody.appendChild(textDiv)
+    textDiv.append(title, text);
 
-    // newDiv.appendChild(emojiDiv);
     emojiDiv.appendChild(emojiSpan);
     emojiSpan.appendChild(emojiBtn1)
     emojiSpan.appendChild(emojiBtn2)
     emojiSpan.appendChild(emojiBtn3)
+
+    if (entryData.gif) {
+        const gifImg = document.createElement('img')
+        gifImg.id = "gif-img"
+        gifImg.src = entryData.gif
+        gifImg.alt = "gif image"
+        cardBody.appendChild(gifImg)
+    }
     
     const blogEntries = document.querySelector('#blog-entries');
     blogEntries.append(emojiDiv);
@@ -200,8 +212,6 @@ function viewEntry(entryData){
 
 function addComment(){
     const addComentBtn = document.querySelector('.addcomment-btn');
-
-    // console.log(window.location.search.slice(searchTerm.search('=')+1))
 
     if (clickNo === 0) {
         clickNo += 1
@@ -266,13 +276,19 @@ function addComment(){
         newForm.append(newTextArea, btnDiv)
         addComentBtn.append(newDiv)
 
-        newForm.addEventListener('submit', submitComment)
+        newForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!e.target.contentOfComment.value){
+                newTextArea.placeholder = "please try again"
+            } else {
+                submitComment(e)
+            }
+        })
     }
 }
 
 function submitComment(e){
-    e.preventDefault();
-    // console.log(e.target.contentOfComment.value)
+    
 
     const entryData = {
         content: e.target.contentOfComment.value,
