@@ -1,5 +1,5 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Roboto,'Open Sans', 'Helvetica Neue', sans-serif
 }
 .header-container {
     height: 100px;
@@ -35,7 +35,7 @@
 }
 
 .viewSearchButton {
-    border: solid;
+    border: solid 0.5px;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
     color: white;
@@ -87,6 +87,19 @@
 }
 
 #get-form{
-    border: none;
-    background-color: orangered;
+    border: 2px solid orangered;
+    background-color: white;
+    color: orangered;
 }
+
+#get-form:hover {
+    background-color: orangered;
+    color:white;
+}
+
+#submitComment:hover {
+    border: 2px solid greenyellow;
+    color: green;
+    
+}
+

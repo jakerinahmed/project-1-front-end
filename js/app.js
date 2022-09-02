@@ -261,7 +261,8 @@ function addComment(){
     
         const inputBtn = document.createElement('input')
         inputBtn.type = "submit"
-        inputBtn.setAttribute("value", "Submit Comment!");
+        inputBtn.id = "submitComment"
+        inputBtn.setAttribute("value", "comment It!");
         btnDiv.appendChild(inputBtn)
         
         newForm.append(newTextArea, btnDiv)
