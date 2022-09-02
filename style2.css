@@ -26,7 +26,7 @@
 }
 
 #text-div {
-    width: 80vw;
+    width: 70vw;
 }
 
 @media screen and (max-width: 900px){
@@ -34,7 +34,7 @@
        flex-direction: column;
     }
     #text-div {
-        width: 100vw;
+        width: auto;
     }
     #gif-img {
         max-width: 50vw;
