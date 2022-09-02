@@ -151,3 +151,12 @@
     border: none;
     border-bottom: 1px solid orangered;
 }
+
+h5:hover{
+    color: orangered;
+    cursor: pointer;
+}
+
+p:hover{
+    cursor: pointer;
+}

@@ -289,14 +289,12 @@ function addComment(){
     }
 }
 
-let searchTerm = window.location.search
-const entryID = searchTerm.slice(searchTerm.search('=')+1)
 function submitComment(e){
     
-
+    let searchTerm = window.location.search
     const entryData = {
         content: e.target.contentOfComment.value,
-        entryId: parseInt(window.location.search.slice(searchTerm.search('=')+1))
+        entryId: parseInt(searchTerm.slice(searchTerm.search('=')+1))
     };
 
     const options = { 
