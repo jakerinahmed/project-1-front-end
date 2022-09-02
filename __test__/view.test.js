@@ -50,31 +50,72 @@
                 expect(formCount).toBeTruthy()
             })
 
-            xtest("Comment box disappears after submitting", () => {
-                const addCommentBtn = document.createElement("div")
-                addCommentBtn.className = "addcomment-button"
-                app.addComment()
+            test("Add comment box disappears after clicking", () => {
+                const addComentBtn = document.querySelector(".addcomment-btn")
+                // addComentBtn.className = "addcomment-button"
+                const getFormBtn = document.createElement('button')
+                getFormBtn.className = "card-link text-right comment"
+                getFormBtn.type = "button"
+                getFormBtn.id = "get-form"
+                getFormBtn.append('Add comment')
+        
+                addComentBtn.appendChild(getFormBtn)
+                let clickCount = 1
                 app.addComment()
                 const formCount = document.querySelector("#get-form")
+                expect(formCount).toBeFalsy()
+            })
+            test("Comment form dissapears after submitting", () => {
+                const addComentBtn = document.querySelector(".addcomment-btn")
+                // addComentBtn.className = "addcomment-button"
+                const newDiv = document.createElement('div')
+                newDiv.className = 'card w-100';
+                newDiv.id = 'form-div'
+            
+                const newForm = document.createElement('form')
+                newForm.id = "new-comment-form"
+                newDiv.appendChild(newForm)
+            
+                const newTextArea = document.createElement('textarea')
+                newTextArea.className = "form-control"
+                newTextArea.id = "contentOfComment"
+                newTextArea.setAttribute("rows", "3");
+                newTextArea.setAttribute("placeholder", "Start typing...")
+                
+                const btnDiv = document.createElement('div')
+                btnDiv.className = "m-1"
+                btnDiv.id = "submitBtn"
+            
+                const inputBtn = document.createElement('input')
+                inputBtn.type = "submit"
+                inputBtn.id = "submitComment"
+                inputBtn.setAttribute("value", "comment It!");
+                btnDiv.appendChild(inputBtn)
+                
+                newForm.append(newTextArea, btnDiv)
+                addComentBtn.append(newDiv)
+                let clickCount = 2
+                app.addComment()
+                const formCount = document.querySelector("#form-div")
                 expect(formCount).toBeFalsy()
             })
         })
 
 
-        describe("submitComment", () => {
-            xtest("sending comment to API", () => {
-                const fakeComment = {
-                    preventDefault: jest.fn(),
-                    target: {
-                        contentOfComment: { value: 'Test Comment' }
-                    }
-                }
-                app.addComment()
-                app.submitComment(fakeComment);
-                expect(fetch.mock.calls[0][1]).toHaveProperty('method', 'POST');
-                expect(fetch.mock.calls[0][1]).toHaveProperty('body', JSON.stringify({ content : "Test Comment" }));
-            })
-        })
+        // describe("submitComment", () => {
+        //     xtest("sending comment to API", () => {
+        //         const fakeComment = {
+        //             preventDefault: jest.fn(),
+        //             target: {
+        //                 contentOfComment: { value: 'Test Comment' }
+        //             }
+        //         }
+        //         app.addComment()
+        //         app.submitComment(fakeComment);
+        //         expect(fetch.mock.calls[0][1]).toHaveProperty('method', 'POST');
+        //         expect(fetch.mock.calls[0][1]).toHaveProperty('body', JSON.stringify({ content : "Test Comment" }));
+        //     })
+        // })
 
         describe("getEntryComments", () => {
             test("Gets comments from API", () => {
