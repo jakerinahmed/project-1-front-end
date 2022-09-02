@@ -190,6 +190,8 @@ function viewEntry(entryData){
     emojiSpan.appendChild(emojiBtn3)
 
     if (entryData.gif) {
+        textDiv.id = "text-div"
+
         const gifImg = document.createElement('img')
         gifImg.id = "gif-img"
         gifImg.src = entryData.gif

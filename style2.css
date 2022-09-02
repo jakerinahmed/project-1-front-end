@@ -15,8 +15,6 @@
     align-items: center;
 }
 
-/* new stuff */
-
 #entry-card {
     display: flex;
     flex-direction: row;
@@ -27,9 +25,16 @@
     height: 100%;
 }
 
+#text-div {
+    width: 80vw;
+}
+
 @media screen and (max-width: 900px){
     #entry-card{
        flex-direction: column;
+    }
+    #text-div {
+        width: 100vw;
     }
     #gif-img {
         max-width: 50vw;
@@ -41,8 +46,6 @@
     position: relative;
     top: -4px;
   }
-
-/* end new */
 
 .bg-navbar {
     background-color: orangered;
