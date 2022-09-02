@@ -1,11 +1,12 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Roboto,'Open Sans', 'Helvetica Neue', sans-serif
 }
+
 .header-container {
     height: 100px;
     margin: 0px 10px 0px 10px;
-    
-} 
+
+}
 
 .bg-navbar {
     background-color: orangered;
@@ -35,18 +36,18 @@
 }
 
 .searchButton {
-    border: solid;
+    border: 0.5px solid;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
     color: white;
     margin: 20px
 }
 
-.comment-button{
+.comment-button {
     text-decoration: none;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
-    color:white;
+    color: white;
     padding: 8px;
 }
 
@@ -55,15 +56,15 @@
     text-decoration: none;
     background-color: white;
     border-radius: 10px 10px 10px 10px;
-    color:orangered;
+    color: orangered;
     padding: 8px;
 }
 
-.new-post-button{
+.new-post-button {
     text-decoration: none;
     background-color: orangered;
     border-radius: 10px 10px 10px 10px;
-    color:white;
+    color: white;
     padding: 8px;
 }
 
@@ -72,7 +73,7 @@
     text-decoration: none;
     background-color: white;
     border-radius: 10px 10px 10px 10px;
-    color:orangered;
+    color: orangered;
     padding: 8px;
 }
 
@@ -88,7 +89,7 @@
     margin-top: 20px;
 }
 
-#emoji{
+#emoji {
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -96,48 +97,56 @@
     z-index: 2;
 }
 
-.emojiBtn > button {
+.emojiBtn>button {
     border-radius: 50px;
     border: none;
     font-size: x-large;
 }
 
-.blogEntry{
-    display:flex;
+.blogEntry {
+    display: flex;
     gap: 20px;
     max-height: 200px;
     margin-bottom: 10px;
-    
+
 
 }
+
 .addBtn {
-    border: 1px solid green;
+    border: none;
+    color:green;
     background-color: #fff;
 }
 
 .resetBtn {
-    border: 1px solid black;
+    border: none;
+    color: grey;
     background-color: #fff;
 }
 
-.submitNewEntry > input {
+
+.submitNewEntry>input {
     background-color: white;
     color: orangered;
-    border: 2px solid orangered;
+    border:2px solid orangered;
     border-radius: 10px;
     margin: 70px 20px;
 }
-    
 
-.submitNewEntry > input:hover {
+
+.submitNewEntry>input:hover {
     border: 2px solid greenyellow;
     color: green;
-    
+
 }
 
-#eBtn:hover{
+#eBtn:hover {
     position: relative;
     top: -4px;
-  }
+}
 
 
+#searchGif {
+    border: none;
+    border-bottom: 1px solid orangered;
+}

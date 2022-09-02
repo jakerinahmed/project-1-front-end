@@ -210,6 +210,7 @@ function viewEntry(entryData){
     })
 }
 
+let clickNo = 0
 function addComment(){
     const addComentBtn = document.querySelector('.addcomment-btn');
 
@@ -270,7 +271,8 @@ function addComment(){
     
         const inputBtn = document.createElement('input')
         inputBtn.type = "submit"
-        inputBtn.setAttribute("value", "Submit Comment!");
+        inputBtn.id = "submitComment"
+        inputBtn.setAttribute("value", "comment It!");
         btnDiv.appendChild(inputBtn)
         
         newForm.append(newTextArea, btnDiv)
@@ -287,6 +289,8 @@ function addComment(){
     }
 }
 
+let searchTerm = window.location.search
+const entryID = searchTerm.slice(searchTerm.search('=')+1)
 function submitComment(e){
     
 
@@ -388,5 +392,12 @@ module.exports = {
     updateEmojiCount,
     appendEntry,
     redirect,
-    appendEntries
+    appendEntries,
+    getOneEntry,
+    viewEntry,
+    addComment,
+    submitComment,
+    getEntryComments,
+    appendComment,
+    appendComments
 }
