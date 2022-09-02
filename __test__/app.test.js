@@ -34,12 +34,13 @@ describe('App', () => {
                     preventDefault: jest.fn(),
                     target: {
                         titleOfPost: { value: 'Test 1' },
-                        contentOfPost: { value: 'Hello this is a test entry' }
+                        contentOfPost: { value: 'Hello this is a test entry' },
+                        gifUrl: { value: 'http.gifman'}
                     }
                 }
                 app.submitEntry(fakeSubmitEvent);
                 expect(fetch.mock.calls[0][1]).toHaveProperty('method', 'POST');
-                expect(fetch.mock.calls[0][1]).toHaveProperty('body', JSON.stringify({ title: "Test 1", content: 'Hello this is a test entry' }));
+                expect(fetch.mock.calls[0][1]).toHaveProperty('body', JSON.stringify({ title: "Test 1", content: 'Hello this is a test entry', gif: 'http.gifman' }));
             })
         })
     })
