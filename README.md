@@ -1,7 +1,7 @@
 # wroteIt - A new journal entry website
 [Visit wroteIt](https://resilient-frangipane-39c540.netlify.app/)
 
-
+<img src="/images/wroteIt.png">
 
 ## What is wroteIt?
 wroteIt is a wesbite where users can anonymously post blog entries, comment on other journal entries and react to other entries. The website is largely influenced by the popular discussion website Reddit.
@@ -24,6 +24,18 @@ wroteIt is a wesbite where users can anonymously post blog entries, comment on o
 * The server-side was the next focus where the API was built using JavaScript then hosted on Heroku.
 
 * Functionality was added to the client side where we tackled the homepage > view entries page > create entry page
+
+## Wins and challenges
+### Wins
+* Wesbite is functioning as intended!
+* Users can anonymously post to the website, API functionality is great
+* Comments are able to be posted.
+* Responsive to different sceen sizes
+
+### Challenges
+* Creating the API to store both journal entries and comments
+* Testing! Testing from scratch did pose a challenge and there is still room for improvement but we believe the current coverage is satisfactory.
+
 
 
 
